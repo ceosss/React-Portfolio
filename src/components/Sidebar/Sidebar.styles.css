@@ -1,0 +1,14 @@
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.side {
+  width: 10%;
+}
+
+.content {
+  width: 75%;
+  margin: 0 50px;
+}

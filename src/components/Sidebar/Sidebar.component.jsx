@@ -11,7 +11,7 @@ import Blog from "./../Blog/Blog.component";
 
 import "./Sidebar.styles.css";
 
-const Sidebar = () => {
+const Sidebar = ({ imageUrl }) => {
   return (
     <div className="sidebar">
       <div className="side">
@@ -24,7 +24,7 @@ const Sidebar = () => {
       </div>
       <div className="content">
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={()=><Home imageUrl={imageUrl} />} />
           <Route path="/experience" component={Experience} />
           <Route path="/projects" component={Projects} />
           <Route path="/contact" component={Contact} />

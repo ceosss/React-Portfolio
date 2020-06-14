@@ -6,25 +6,21 @@ import "xp.css/dist/XP.css";
 
 import "./Contact.styles.css";
 
-const Contact = () => {
+const Contact = ({ history }) => {
   const [values, setValues] = useState({ email: "", text: "", status: "" });
-
-  const styles = {
-    formFontSize: {
-      fontSize: 20 + "px",
-    },
-    formDim: {
-      height: 40 + "px",
-    },
-  };
 
   const onChangeHandler = (event) => {
     let { name, value } = event.target;
     setValues({ ...values, [name]: value });
   };
 
+  const sendHome = () => {
+    history.push("/");
+  };
+
   const handleSubmit = () => {
     const { email, text } = values;
+
     if (email === "" || text === "") {
       setValues({ ...values, status: "Please fill all the fields" });
       return;
@@ -51,10 +47,32 @@ const Contact = () => {
 
   return (
     <div className="contact">
-      <div className="head">
-        <h1>CONTACT</h1>
+      <div
+        className="title-bar"
+        style={{
+          width: 89 + "%",
+          paddingTop: 10 + "px",
+          paddingBottom: 10 + "px",
+          paddingLeft: 10 + "px",
+        }}
+      >
+        <div className="title-bar-text title">Contact.exe</div>
+        <div className="title-bar-controls">
+          <button
+            aria-label="Close"
+            className="close"
+            onClick={sendHome}
+          ></button>
+        </div>
       </div>
-      <div className="field-row-stacked form" style={{ width: 90 + "%" }}>
+      {/* <div className="head">
+        <h1>CONTACT</h1>
+      </div> */}
+      <div
+        className="field-row-stacked form"
+        style={{ width: 89 + "%", border: "5px solid blue", borderTop: 0 }}
+      >
+        <label>EMail:</label>
         <input
           name="email"
           type="email"
@@ -63,6 +81,7 @@ const Contact = () => {
           required
           style={{ fontSize: 20 + "px", height: 40 + "px", padding: 15 + "px" }}
         />
+        <label>Your Message:</label>
         <textarea
           name="text"
           cols="30"
@@ -72,33 +91,29 @@ const Contact = () => {
           required
           style={{ fontSize: 20 + "px", padding: 15 + "px" }}
         ></textarea>
-        <button
-          onClick={handleSubmit}
-          style={{ height: 40 + "px", fontSize: 15 + "px",fontWeight:"bold" }}
-        >
-          SEND
-        </button>
+        <div className="buttons">
+          <button
+            onClick={handleSubmit}
+            style={{
+              fontSize: 15 + "px",
+              fontWeight: "bold",
+            }}
+          >
+            SEND
+          </button>
+          <button
+            onClick={sendHome}
+            style={{
+              fontSize: 15 + "px",
+              fontWeight: "bold",
+            }}
+          >
+            Cancel
+          </button>
+        </div>
+
         <span className="status">{values.status}</span>
       </div>
-      {/* <div className="form">
-        <input
-          name="email"
-          type="email"
-          placeholder="Email ID"
-          onChange={onChangeHandler}
-          required
-        />
-        <textarea
-          name="text"
-          cols="30"
-          rows="10"
-          placeholder="Enter you Text Here..."
-          onChange={onChangeHandler}
-          required
-        ></textarea>
-        <button onClick={handleSubmit}>Send</button>
-        <span className="status">{values.status}</span>
-      </div> */}
     </div>
   );
 };

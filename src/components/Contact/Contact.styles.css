@@ -1,6 +1,7 @@
 .head {
   width: 75%;
   margin: 0 50px;
+  font-family: "Pixelated MS Sans Serif";
 }
 
 .contact {
@@ -16,15 +17,44 @@
   flex-direction: column;
   text-align: center;
   font-size: 10px;
+  /* align-items: center; */
 }
 
 .status {
   color: red;
   font-size: 20px;
   margin-top: 20px;
+  margin-bottom: 5px;
   text-transform: uppercase;
 }
 
 button {
-  letter-spacing: 3px;
+  /* letter-spacing: 3px; */
+  width: max-content;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+label {
+  font-size: 20px;
+  padding: 15px;
+  text-align: left;
+  margin-left: 4%;
+}
+
+textarea,
+input {
+  width: 90%;
+  margin: auto;
+}
+
+.buttons {
+  padding-top: 10px;
+}
+
+.close {
 }

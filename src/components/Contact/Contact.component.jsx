@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 import axios from "axios";
 import KEYS from "./../../keys.js";
-import "xp.css/dist/XP.css";
+import Draggable from "react-draggable";
 
+import "xp.css/dist/XP.css";
 import "./Contact.styles.css";
 
 const Contact = ({ history }) => {
@@ -46,75 +47,81 @@ const Contact = ({ history }) => {
   };
 
   return (
-    <div className="contact">
-      <div
-        className="title-bar"
-        style={{
-          width: 89 + "%",
-          paddingTop: 10 + "px",
-          paddingBottom: 10 + "px",
-          paddingLeft: 10 + "px",
-        }}
-      >
-        <div className="title-bar-text title">Contact.exe</div>
-        <div className="title-bar-controls">
-          <button
-            aria-label="Close"
-            className="close"
-            onClick={sendHome}
-          ></button>
+    <Draggable handle="div.title-bar">
+      <div className="contact">
+        <div
+          className="title-bar"
+          style={{
+            width: 89 + "%",
+            paddingTop: 10 + "px",
+            paddingBottom: 10 + "px",
+            paddingLeft: 10 + "px",
+          }}
+        >
+          <div className="title-bar-text title">Contact.exe</div>
+          <div className="title-bar-controls">
+            <button
+              aria-label="Close"
+              className="close"
+              onClick={sendHome}
+            ></button>
+          </div>
         </div>
-      </div>
-      {/* <div className="head">
+        {/* <div className="head">
         <h1>CONTACT</h1>
       </div> */}
-      <div
-        className="field-row-stacked form"
-        style={{ width: 89 + "%", border: "5px solid blue", borderTop: 0 }}
-      >
-        <label>EMail:</label>
-        <input
-          name="email"
-          type="email"
-          placeholder="Email ID"
-          onChange={onChangeHandler}
-          required
-          style={{ fontSize: 20 + "px", height: 40 + "px", padding: 15 + "px" }}
-        />
-        <label>Your Message:</label>
-        <textarea
-          name="text"
-          cols="30"
-          rows="10"
-          placeholder="Enter you Text Here..."
-          onChange={onChangeHandler}
-          required
-          style={{ fontSize: 20 + "px", padding: 15 + "px" }}
-        ></textarea>
-        <div className="buttons">
-          <button
-            onClick={handleSubmit}
+        <div
+          className="field-row-stacked form"
+          style={{ width: 89 + "%", border: "5px solid blue", borderTop: 0 }}
+        >
+          <label>EMail:</label>
+          <input
+            name="email"
+            type="email"
+            placeholder="Email ID"
+            onChange={onChangeHandler}
+            required
             style={{
-              fontSize: 15 + "px",
-              fontWeight: "bold",
+              fontSize: 20 + "px",
+              height: 40 + "px",
+              padding: 15 + "px",
             }}
-          >
-            SEND
-          </button>
-          <button
-            onClick={sendHome}
-            style={{
-              fontSize: 15 + "px",
-              fontWeight: "bold",
-            }}
-          >
-            Cancel
-          </button>
-        </div>
+          />
+          <label>Your Message:</label>
+          <textarea
+            name="text"
+            cols="30"
+            rows="10"
+            placeholder="Enter you Text Here..."
+            onChange={onChangeHandler}
+            required
+            style={{ fontSize: 20 + "px", padding: 15 + "px" }}
+          ></textarea>
+          <div className="buttons">
+            <button
+              onClick={handleSubmit}
+              style={{
+                fontSize: 15 + "px",
+                fontWeight: "bold",
+              }}
+            >
+              SEND
+            </button>
+            <button
+              onClick={sendHome}
+              style={{
+                fontSize: 15 + "px",
+                fontWeight: "bold",
+              }}
+            >
+              Cancel
+            </button>
+          </div>
 
-        <span className="status">{values.status}</span>
+          <span className="status">{values.status}</span>
+        </div>
       </div>
-    </div>
+    </Draggable>
   );
 };
 

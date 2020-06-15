@@ -1,11 +1,18 @@
 .sidebar {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  height: 100vh;
 }
 
 .side {
-  width: 10%;
+  width: 25%;
+  background-color: #d3e5fa;
+  border-top-right-radius: 15px;
+  border-right: 4px solid #1e67cf;
+  -webkit-box-shadow: 10px 10px 29px -2px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 10px 10px 29px -2px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 10px 29px -2px rgba(0, 0, 0, 0.7);
 }
 
 .content {

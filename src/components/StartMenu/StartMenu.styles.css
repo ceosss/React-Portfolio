@@ -1,0 +1,37 @@
+.task-bar {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+}
+
+.bar img {
+  border-radius: unset;
+  padding: unset;
+  height: 5vh;
+  width: unset;
+}
+
+.bar img:hover {
+  cursor: pointer;
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #1c79f3;
+  height: 5vh;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.time p {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  justify-content: center;
+}

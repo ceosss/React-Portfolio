@@ -25,11 +25,15 @@
   margin: 20px auto;
 }
 
-img {
+.image img {
   padding: 25px;
   border-radius: 50%;
   height: 350px;
   width: 350px;
+}
+
+.title-bar:hover {
+  cursor: move;
 }
 
 .text {
@@ -50,4 +54,9 @@ img {
 
 .social-icons i {
   color: #000000;
+}
+
+.social-head h1 {
+  margin: unset;
+  margin-bottom: 10px;
 }

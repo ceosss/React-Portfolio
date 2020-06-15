@@ -11,20 +11,20 @@ import Blog from "./../Blog/Blog.component";
 
 import "./Sidebar.styles.css";
 
-const Sidebar = ({ imageUrl }) => {
+const Sidebar = ({ hide }) => {
   return (
     <div className="sidebar">
-      <div className="side">
-        <div className="heading">
-          <h2>Sidebar</h2>
+      {hide ? null : (
+        <div className="side">
+          <div className="options">
+            <OptionLinks />
+          </div>
         </div>
-        <div className="options">
-          <OptionLinks />
-        </div>
-      </div>
+      )}
+
       <div className="content">
         <Switch>
-          <Route exact path="/" component={()=><Home imageUrl={imageUrl} />} />
+          <Route exact path="/" component={Home} />
           <Route path="/experience" component={Experience} />
           <Route path="/projects" component={Projects} />
           <Route path="/contact" component={Contact} />

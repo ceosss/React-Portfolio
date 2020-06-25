@@ -5,8 +5,41 @@
   /* align-items: center; */
 }
 
-.experience h1 {
+.experience .content {
+  padding: 0 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  /* background-color: #e7e4dc; */
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.tree-view {
+  width: 75%;
+  height: 500px;
+  padding: 20px;
+  box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee,
+    inset -3px -3px #003bda, inset 3px 3px #0855dd;
+  font-size: 17px;
+}
+.exp-logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.experience h2 {
   text-align: center;
+  margin: 0;
+  margin-top: 42px;
+  margin-bottom: 10px;
+}
+
+.experience h4 {
+  margin: 0;
+  margin-top: 15px;
 }
 
 .vertical {
@@ -18,4 +51,9 @@
 
 span.tenure {
   color: gray;
+  margin: 0;
+}
+
+section {
+  color: red;
 }
